@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 16:05:09 by gacalaza          #+#    #+#              #
-#    Updated: 2023/08/05 14:00:37 by gacalaza         ###   ########.fr        #
+#    Updated: 2023/08/05 17:24:51 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRCS += sorting.c dealing_lst_one.c dealing_lst_two.c
 SRCS += do_moves.c op_cost.c locate_pos.c
 SRCS += sort_hundred.c rate_moves_atob.c rate_moves_btoa.c
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS_MAN:.c=.o)
 
 BSRC = 
 BOBJS = $(BSRC:.c=.o)
@@ -41,6 +41,7 @@ BOBJS = $(BSRC:.c=.o)
 LIBFT_DIR	= ./libft/
 INCL_DIR	= ./include/
 MANDATORY	= ./mandatory/
+OBJ_DIR		= ./mandatory/objs
 BONUS		= ./bonus/
 LIBFT		= $(addprefix $(LIBFT_DIR), libft.a)
 HEADERM		= $(addprefix $(INCL_DIR), push_swap.h)
@@ -66,9 +67,13 @@ ERROR		=	echo "\n🚫 $(RED)Erro:$(NO_COLOR)File/Header not found ¯\_(ツ)_/¯"
 
 # =================== Rules ==========================
 
-# # Compiling Mandatory or Bonus Objs
+# Compiling Objects and Moving to OBJ_DIR
 %.o: %.c
 	$(CC) $(FLAGS) -I $(INCL_DIR) -c $< -o $@
+	mv $@ $(OBJ_DIR)
+
+# Creating objs_dir
+$(shell mkdir -p $(OBJ_DIR))
 
 all: comp_libft $(NAME)
 
@@ -76,7 +81,7 @@ $(OBJS): $(HEADERM)
 
 $(BOBJS): $(HEADERB)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS:%=$(OBJ_DIR)/%)
 	cc $(FLAGS) $^ $(LIBFT) -o $@
 	@$(PS_READY)
 
@@ -98,7 +103,7 @@ rebonus: fclean bonus
 	@$(RECOMPB)
 
 clean:
-	@rm -rf $(BOBJS) $(OBJS)
+	@rm -rf $(BOBJS) $(OBJ_DIR)
 	@make -C $(LIBFT_DIR) clean
 	@$(CLEANED)
 

@@ -6,11 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 11:46:18 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/06/03 18:34:23 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:01:10 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 // (reverse rotate): Shift down all elements of stack by 1.
 // The last element becomes the first one.

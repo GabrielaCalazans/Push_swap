@@ -6,11 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 16:29:03 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/05 14:08:07 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:00:35 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 // ** Func finds and returns the smallest nbr int int the stack
 int	ft_min(t_stack *head)

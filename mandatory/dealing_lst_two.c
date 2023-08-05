@@ -6,11 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 16:35:50 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/05 14:44:44 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:00:19 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 // Func to find the size of the lst
 int	ft_size(t_stack *lst)

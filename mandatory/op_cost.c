@@ -6,11 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:30:27 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/02 16:56:55 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:00:40 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 int	track_pos_b(t_stack *b, int check)
 {

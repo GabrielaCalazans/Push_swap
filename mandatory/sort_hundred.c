@@ -6,11 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 17:22:06 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/05 13:58:27 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:01:22 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 void	sort_hundred_a_to_b(t_stack **a, t_stack **b)
 {

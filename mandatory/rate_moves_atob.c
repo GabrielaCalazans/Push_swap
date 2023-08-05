@@ -6,11 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:36:47 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/02 15:23:31 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:00:54 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 int	rate_rr_atob(t_stack *a, t_stack *b, int check)
 {

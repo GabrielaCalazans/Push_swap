@@ -6,11 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 11:45:00 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/05 14:21:33 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:01:36 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 void	ft_swap_ab(t_stack **head, int check)
 {

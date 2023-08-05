@@ -6,11 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 15:58:26 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/05 14:43:00 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:01:31 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 static void	ft_freearray(char **array)
 {

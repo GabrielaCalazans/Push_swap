@@ -6,11 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 16:50:00 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/05 14:26:12 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:00:05 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 // ** Outputs the string msg to the standard output followed by an exit of the
 // ** program with a custom return value.

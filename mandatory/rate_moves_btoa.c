@@ -6,11 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 17:32:49 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/07/28 17:33:02 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:01:04 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 int	rate_rr_btoa(t_stack *a, t_stack *b, int check)
 {

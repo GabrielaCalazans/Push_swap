@@ -6,11 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 23:45:51 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/05 14:32:23 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:00:15 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 // Func to create a new node
 t_stack	*createnode(int nbr, int index)

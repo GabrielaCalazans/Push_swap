@@ -6,11 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:05:30 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/02 15:24:27 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:00:23 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 int	do_rr(t_stack **a, t_stack **b, int check, int stack)
 {
