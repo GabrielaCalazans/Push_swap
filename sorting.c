@@ -6,7 +6,7 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 17:36:31 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/05 13:10:38 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 13:57:58 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,5 @@ void	sort_hundred(t_stack **a, t_stack **b, int len)
 	if (ft_size(*b) > 3)
 		check_and_push_to_a(a, b);
 	if (!check_its_sorted_a(a) && ft_size(*b) < 1)
-	{
-		// printf("GETING HERE");
 		sort_final(a, len);
-	}
 }

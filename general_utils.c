@@ -6,34 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:27:45 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/02 15:16:20 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 14:43:02 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
-
-void	ft_freearray(char **array)
-{
-	int		i;
-
-	i = 0;
-	while (array[i] != NULL)
-	{
-		free(array[i]);
-		array[i] = NULL;
-		i++;
-	}
-	free(array);
-}
-
-// ** Outputs the string msg to the standard output followed by an exit of the
-// ** program with a custom return value.
-
-void	ft_puterror(void)
-{
-	ft_putendl_fd("Error", 1);
-	exit(1);
-}
 
 int	ft_atoi_error(const char *nptr)
 {
@@ -74,13 +51,20 @@ void	push_all_b_to_a(t_stack **a, t_stack **b)
 	}
 }
 
-// ** Display a usage message on how to run and use push_swap
+// Func checks if the stack is sorted.
+int	check_its_sorted_a(t_stack **head)
+{
+	int		i;
+	t_stack	*temp;
 
-// static void	fdf_usage(void)
-// {
-// 	ft_putstr_fd("Push_swap Usage:\n\t", 1);
-// 	ft_putstr_fd("Pleae input a random amount of negative and/or ", 1);
-// 	ft_putstr_fd("positive numbers which cannot be duplicated.:\n\t", 1);
-// 	ft_putstr_fd("Then, run ex.: ./push_swap 1 2 3 4\n\t", 1);
-// 	ft_putstr_fd("Or, ex.: ./push_swap \"1 2 3 4\"\n\t", 1);
-// }
+	temp = *head;
+	i = temp->index;
+	while (temp)
+	{
+		if (i > temp->index)
+			return (0);
+		i = temp->index;
+		temp = temp->next;
+	}
+	return (1);
+}

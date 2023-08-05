@@ -6,12 +6,13 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:20:47 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/06/01 16:54:15 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 14:28:46 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
 
+// ** Checks if the given arguments is a sign
 int	ft_issign(char c)
 {
 	if (c == '-' || c == '+')
@@ -19,6 +20,7 @@ int	ft_issign(char c)
 	return (0);
 }
 
+// ** Checks if the given arguments is a space
 int	ft_isspace(char c)
 {
 	if (c == ' ')
@@ -55,6 +57,7 @@ int	check_error(char *argv[], int i, int j)
 	return (1);
 }
 
+// ** Checks if the given arguments is a valid int
 void	check_int(char *argv[])
 {
 	int	i;

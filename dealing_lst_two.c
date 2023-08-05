@@ -6,40 +6,11 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 16:35:50 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/07/28 17:59:36 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 14:44:44 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
-
-// Func to add node at the beging of the lst
-void	ft_add_front(t_stack **lst, t_stack *new)
-{
-	if (*lst)
-	{
-		new->next = *lst;
-		new->prev = NULL;
-		*lst = new;
-	}
-	else
-		*lst = new;
-}
-
-// Func to add node at the end of the lst
-void	ft_add_back(t_stack **lst, t_stack *new)
-{
-	t_stack	*temp;
-
-	if (*lst)
-	{
-		temp = ft_last(*lst);
-		temp->next = new;
-		new->prev = temp;
-	}
-	else
-		if (*lst)
-			*lst = new;
-}
 
 // Func to find the size of the lst
 int	ft_size(t_stack *lst)
@@ -55,18 +26,33 @@ int	ft_size(t_stack *lst)
 	return (len);
 }
 
-// Func to free the the lst
-void	ft_clear(t_stack **lst)
+// Func to find almost last
+t_stack	*ft_prevlast(t_stack *lst)
 {
-	t_stack	*temp;
-	t_stack	*next;
+	t_stack	*last;
 
-	temp = *lst;
-	while (temp != NULL)
+	last = ft_last(lst);
+	if (lst == NULL)
+		return (0);
+	while (lst)
 	{
-		next = temp->next;
-		free (temp);
-		temp = next;
+		if (lst->next == last)
+			return (lst);
+		lst = lst->next;
 	}
-	*lst = NULL;
+	return (lst);
+}
+
+// Func to find the last node
+t_stack	*ft_last(t_stack *lst)
+{
+	if (lst == NULL)
+		return (0);
+	while (lst)
+	{
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
 }

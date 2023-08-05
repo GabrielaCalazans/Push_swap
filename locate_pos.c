@@ -6,7 +6,7 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 16:29:03 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/02 15:15:44 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 14:08:07 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,4 @@ int	ft_int_pos(t_stack *head, int find)
 		pos++;
 	}
 	return (pos);
-}
-
-// Func checks if the stack is sorted.
-int	check_its_sorted_a(t_stack **head)
-{
-	int		i;
-	t_stack	*temp;
-
-	temp = *head;
-	i = temp->index;
-	while (temp)
-	{
-		if (i > temp->index)
-			return (0);
-		i = temp->index;
-		temp = temp->next;
-	}
-	return (1);
 }

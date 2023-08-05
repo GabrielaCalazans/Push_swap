@@ -6,7 +6,7 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 17:22:06 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/08/04 14:25:10 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 13:58:27 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	sort_hundred_a_to_b(t_stack **a, t_stack **b)
 		ft_push_b(a, b, 98);
 	if (!check_its_sorted_a(a) && ft_size(*a) > 3)
 		ft_push_b(a, b, 98);
-	// if (!check_its_sorted_a(a) && ft_size(*a) > 3)
-	// 	ft_push_b(a, b, 98);
 	if (!check_its_sorted_a(a) && ft_size(*a) > 3)
 		check_and_push_to_b(a, b);
 	if (!check_its_sorted_a(a) && ft_size(*a) == 3)
@@ -86,16 +84,13 @@ void	sort_final(t_stack **a, int len)
 	size = len / 2;
 	pos_min = ft_int_pos(*a, ft_min(*a));
 	pos_final = len - pos_min;
-	// printf("size:%d	pos_min:%d	pos_final%d\n", size, pos_min, pos_final);
 	if (pos_min < size)
 	{
-		// printf("HEre post_min\n");
 		while (pos_min-- > 0)
 			ft_rotate_ab(a, 97);
 	}
 	else if (pos_min >= size)
 	{
-		// printf("HEre post_min\n");
 		while (pos_final-- > 0)
 			ft_rev_rotate_ab(a, 97);
 	}

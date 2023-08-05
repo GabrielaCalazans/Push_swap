@@ -6,7 +6,7 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 23:45:51 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/07/28 17:52:29 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 14:32:23 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,44 +26,47 @@ t_stack	*createnode(int nbr, int index)
 	return (newnode);
 }
 
-// Func to find the last node
-t_stack	*ft_last(t_stack *lst)
+// Func to add node at the beging of the lst
+void	ft_add_front(t_stack **lst, t_stack *new)
 {
-	if (lst == NULL)
-		return (0);
-	while (lst)
+	if (*lst)
 	{
-		if (lst->next == NULL)
-			return (lst);
-		lst = lst->next;
+		new->next = *lst;
+		new->prev = NULL;
+		*lst = new;
 	}
-	return (lst);
+	else
+		*lst = new;
 }
 
-// Func to find almost last
-t_stack	*ft_prevlast(t_stack *lst)
+// Func to add node at the end of the lst
+void	ft_add_back(t_stack **lst, t_stack *new)
 {
-	t_stack	*last;
+	t_stack	*temp;
 
-	last = ft_last(lst);
-	if (lst == NULL)
-		return (0);
-	while (lst)
+	if (*lst)
 	{
-		if (lst->next == last)
-			return (lst);
-		lst = lst->next;
+		temp = ft_last(*lst);
+		temp->next = new;
+		new->prev = temp;
 	}
-	return (lst);
+	else
+		if (*lst)
+			*lst = new;
 }
 
-// Func to find almost last
-t_stack	*ft_second(t_stack *lst)
+// Func to free the the lst
+void	ft_clear(t_stack **lst)
 {
-	t_stack	*second;
+	t_stack	*temp;
+	t_stack	*next;
 
-	if (lst == NULL)
-		return (0);
-	second = lst->next;
-	return (second);
+	temp = *lst;
+	while (temp != NULL)
+	{
+		next = temp->next;
+		free (temp);
+		temp = next;
+	}
+	*lst = NULL;
 }

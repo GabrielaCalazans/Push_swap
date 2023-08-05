@@ -6,13 +6,27 @@
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 15:58:26 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/06/03 16:55:27 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/08/05 14:43:00 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
 
-int	find_index(char **str, int nbr, int j)
+static void	ft_freearray(char **array)
+{
+	int		i;
+
+	i = 0;
+	while (array[i] != NULL)
+	{
+		free(array[i]);
+		array[i] = NULL;
+		i++;
+	}
+	free(array);
+}
+
+static int	find_index(char **str, int nbr, int j)
 {
 	int	index;
 	int	comp;
@@ -32,7 +46,7 @@ int	find_index(char **str, int nbr, int j)
 	return (index);
 }
 
-void	sub_starting(t_stack **a, char **str, int i)
+static void	sub_starting(t_stack **a, char **str, int i)
 {
 	t_stack	*newnode;
 	int		index;
