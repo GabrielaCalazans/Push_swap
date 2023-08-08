@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/15 16:05:09 by gacalaza          #+#    #+#              #
-#    Updated: 2023/08/05 17:24:51 by gacalaza         ###   ########.fr        #
+#    Updated: 2023/08/08 15:29:35 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,22 +32,15 @@ SRCS += sorting.c dealing_lst_one.c dealing_lst_two.c
 SRCS += do_moves.c op_cost.c locate_pos.c
 SRCS += sort_hundred.c rate_moves_atob.c rate_moves_btoa.c
 
-OBJS = $(SRCS_MAN:.c=.o)
-
-BSRC = 
-BOBJS = $(BSRC:.c=.o)
+OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 
 # ====== Folders and Paths ========
 LIBFT_DIR	= ./libft/
 INCL_DIR	= ./include/
 MANDATORY	= ./mandatory/
-OBJ_DIR		= ./mandatory/objs
-BONUS		= ./bonus/
+OBJ_DIR		= ./mandatory/objs/
 LIBFT		= $(addprefix $(LIBFT_DIR), libft.a)
 HEADERM		= $(addprefix $(INCL_DIR), push_swap.h)
-HEADERB		= $(addprefix $(INCL_DIR), push_swap_bonus.h)
-SRCS_MAN	= $(addprefix $(MANDATORY), $(SRCS))
-BSRCS_BON	= $(addprefix $(BONUS), $(BSRCS))
 
 # ====== Flags ========
 
@@ -67,34 +60,26 @@ ERROR		=	echo "\n🚫 $(RED)Erro:$(NO_COLOR)File/Header not found ¯\_(ツ)_/¯"
 
 # =================== Rules ==========================
 
-# Compiling Objects and Moving to OBJ_DIR
-%.o: %.c
-	$(CC) $(FLAGS) -I $(INCL_DIR) -c $< -o $@
-	mv $@ $(OBJ_DIR)
-
 # Creating objs_dir
 $(shell mkdir -p $(OBJ_DIR))
+
+# Compiling Objects and Moving to OBJ_DIR
+$(OBJ_DIR)%.o: $(MANDATORY)%.c
+	$(CC) $(FLAGS) -I $(INCL_DIR) -c $< -o $@
+
 
 all: comp_libft $(NAME)
 
 $(OBJS): $(HEADERM)
 
-$(BOBJS): $(HEADERB)
-
-$(NAME): $(OBJS:%=$(OBJ_DIR)/%)
+$(NAME): $(OBJS)
 	cc $(FLAGS) $^ $(LIBFT) -o $@
 	@$(PS_READY)
-
-$(BONUS): $(BOBJS)
-	cc $(FLAGS) $^ $(LIBFT) -o $@
-	@$(BPS_READY)
 
 comp_libft:
 	@$(COMP_LIFT)
 	@make -C $(LIBFT_DIR) --no-print-directory
 	@$(LIBS)
-
-bonus: comp_libf $(BONUS)
 
 re: fclean all
 	@$(RECOMP)
@@ -117,4 +102,4 @@ limpo: all clean
 
 re:	fclean all
 
-.PHONY: all clean fclean re comp_libft bonus rebonus limpo
+.PHONY: all clean fclean re comp_libft limpo
